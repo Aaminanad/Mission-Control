@@ -41,7 +41,7 @@ This runs entirely client-side, at low resolution, so it's cheap enough to do ev
 There's no face/head-detection model involved. Instead it uses frame differencing, a classic and lightweight computer-vision technique.
 Every animation frame, the webcam image is drawn (mirrored) onto a small hidden 160×120 canvas.
 That frame is compared pixel-by-pixel to the previous frame. Pixels that changed by more than a threshold are flagged as "moved."
-The average position (a weighted centroid) of all flagged pixels becomes the tracked point — wherever the biggest change just happened, which in practice is wherever you moved.
+The average position (a weighted centroid) of all flagged pixels becomes the tracked point, wherever the biggest change just happened, which in practice is wherever you moved.
 That point is smoothed (linear interpolation) to remove jitter, then mapped onto the game canvas as the ship's target position. The ship eases toward that target rather than snapping, so flight feels fluid.
 
 
