@@ -45,6 +45,7 @@ The average position (a weighted centroid) of all flagged pixels becomes the tra
 That point is smoothed (linear interpolation) to remove jitter, then mapped onto the game canvas as the ship's target position. The ship eases toward that target rather than snapping, so flight feels fluid.
 
 
+
 # LIMITATIONS:
 Camera access requires a real page load  it won't work inside a restricted preview iframe. 
 If your browser blocks it, the game falls back to arrow-key controls automatically.
