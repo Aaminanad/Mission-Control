@@ -23,13 +23,13 @@ USER FAILS GAME:
 <img width="378" height="362" alt="mc-fail" src="https://github.com/user-attachments/assets/9f55e488-ec58-4b18-8666-361ccfc30a37" />
 
 # How to play
-Move your head left / right / up / down in front of the camera.
-Dodge the pink/red asteroids falling from the top.
-Fly through the yellow orbs to score bonus points.
-You have 3 hull points (lives, top right). Game ends at 0.
-Score climbs automatically the longer you survive, plus orb bonuses.
-Press P to pause/resume.
-If the camera is denied, use arrow keys instead.
+1.Move your head left / right / up / down in front of the camera.
+2.Dodge the pink/red asteroids falling from the top.
+3.Fly through the yellow orbs to score bonus points.
+4.You have 3 hull points (lives, top right). Game ends at 0.
+5.Score climbs automatically the longer you survive, plus orb bonuses.
+6.Press P to pause/resume.
+7.If the camera is denied, use arrow keys instead.
 
 # WHAT I DID?
 
