@@ -48,20 +48,27 @@ In JavaScript I set the camera setup, motion tracking, game state, physics/colli
 The canvas size is determined by width/height attributes on canvas (both the HTML attribute and the W/H constants near the top of the script).
 This runs entirely client-side, at low resolution, so it's cheap enough to do every frame without a GPU or external API.
 
+# TRACKING:
+ 
 There's no face/head-detection model involved. Instead it uses frame differencing, a classic and lightweight computer-vision technique.
+
 Every animation frame, the webcam image is drawn (mirrored) onto a small hidden 160×120 canvas.
 
 That frame is compared pixel-by-pixel to the previous frame. Pixels that changed by more than a threshold are flagged as "moved."
 
-The average position (a weighted centroid) of all flagged pixels becomes the tracked point, wherever the biggest change just happened, which in practice is wherever you moved.
 
-That point is smoothed (linear interpolation) to remove jitter, then mapped onto the game canvas as the ship's target position. The ship eases toward that target rather than snapping, so flight feels fluid.
 
 
 
 # LIMITATIONS:
+
 Camera access requires a real page load  it won't work inside a restricted preview iframe. 
+
 If your browser blocks it, the game falls back to arrow-key controls automatically.
+
 Tracking is motion-basedit follows whatever moved most, not specifically your hand or face. Busy backgrounds (moving curtains, a second person, changing light) can distract it.
+
 No motion history/prediction so if you hold still, the ship just holds its last known position.
+
 Single-player, single ship, no persistent high scores (nothing is saved between sessions).
+
