@@ -24,7 +24,9 @@ USER FAILS GAME:
 
 # How to play
 1.Move your head left / right / up / down in front of the camera.
+
 2.Dodge the pink/red asteroids falling from the top.
+
 3.Fly through the yellow orbs to score bonus points.
 4.You have 3 hull points (lives, top right). Game ends at 0.
 5.Score climbs automatically the longer you survive, plus orb bonuses.
