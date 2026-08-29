@@ -1,4 +1,4 @@
-MISSION CONTROL
+# MISSION CONTROL
 
 A browser game you play by moving your head in front of your webcam 
 In case you dont have webcam, dont worry, you can use keyboard!
