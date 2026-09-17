@@ -12,15 +12,24 @@ Open the link in description to play on Github Pages Site.
 
 GAME START SCREEN:
 
-<img width="391" height="353" alt="mc-start" src="https://github.com/user-attachments/assets/06a866e7-7d9e-4901-9bba-c4d83cd6dd6b" />
+<img width="633" height="394" alt="image" src="https://github.com/user-attachments/assets/8e0a1e25-0cec-4a4c-8595-b140cec56776" />
 
-USER PLAYS GAME:
+USER PLAYS GAME WITH HEAD/HAND:
 
-<img width="377" height="323" alt="mc-play" src="https://github.com/user-attachments/assets/2d4766f8-f691-4bbc-8d99-9786f2e11b16" />
+<img width="578" height="388" alt="image" src="https://github.com/user-attachments/assets/8f645183-b9e4-4f8c-949f-2ac059744841" />
+
+
+
+
+USER PLAYS GAME WITH KEYBOARD:
+
+<img width="639" height="403" alt="image" src="https://github.com/user-attachments/assets/e86590b9-2bfd-4607-8257-3d069f3a5833" />
+
 
 USER FAILS GAME:
 
-<img width="378" height="362" alt="mc-fail" src="https://github.com/user-attachments/assets/9f55e488-ec58-4b18-8666-361ccfc30a37" />
+<img width="587" height="380" alt="image" src="https://github.com/user-attachments/assets/56b83bf1-a437-4813-9e0b-7a52b7112d11" />
+
 
 # How to play
 1.Move your head left / right / up / down in front of the camera.
