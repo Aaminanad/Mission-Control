@@ -28,7 +28,8 @@ USER PLAYS GAME WITH KEYBOARD:
 
 USER FAILS GAME:
 
-<img width="587" height="380" alt="image" src="https://github.com/user-attachments/assets/56b83bf1-a437-4813-9e0b-7a52b7112d11" />
+<img width="590" height="404" alt="image" src="https://github.com/user-attachments/assets/19fe7043-e03a-478e-8a8e-76f77086d9af" />
+
 
 
 # How to play
