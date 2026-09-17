@@ -40,7 +40,7 @@
  
   const keys = { up:false, down:false, left:false, right:false };
  
-  const ship = { x: W/2, y: H*0.8, r: 16, targetX: W/2, targetY: H*0.8, invuln: 0 };
+  const ship = { x: W, y: H*0.8, r: 16, targetX: W/2, targetY: H*0.8, invuln: 0 };
   let asteroids = [];
   let orbs = [];
   let stars = [];
@@ -267,29 +267,64 @@
  
   // ---------- render ----------
   function drawShip(){
-    ctx.save();
-    ctx.translate(ship.x, ship.y);
-    const flicker = ship.invuln > 0 ? (Math.sin(elapsed*30) > 0 ? 0.35 : 1) : 1;
-    ctx.globalAlpha = flicker;
-    ctx.fillStyle = '#5EEAD4';
-    ctx.shadowColor = '#5EEAD4';
-    ctx.shadowBlur = 14;
-    ctx.beginPath();
-    ctx.moveTo(0, -ship.r);
-    ctx.lineTo(ship.r*0.8, ship.r*0.9);
-    ctx.lineTo(0, ship.r*0.4);
-    ctx.lineTo(-ship.r*0.8, ship.r*0.9);
-    ctx.closePath();
-    ctx.fill();
-    ctx.restore();
-  }
- 
+  ctx.save();
+  ctx.translate(ship.x, ship.y);
+  const flicker = ship.invuln > 0 ? (Math.sin(elapsed*30) > 0 ? 0.35 : 1) : 1;
+  ctx.globalAlpha = flicker;
+  const r = ship.r;
+
+  // exhaust flame (drawn first, sits behind the hull)
+  const flameLen = r * (0.45 + Math.sin(elapsed*18)*0.15);
+  ctx.beginPath();
+  ctx.moveTo(-0.28*r, 0.9*r);
+  ctx.lineTo(0, 0.9*r + flameLen);
+  ctx.lineTo(0.28*r, 0.9*r);
+  ctx.closePath();
+  ctx.fillStyle = '#ff944d';
+  ctx.fill();
+
+  // fins
+  ctx.beginPath();
+  ctx.moveTo(-0.35*r, 0.35*r); ctx.lineTo(-0.85*r, 0.95*r); ctx.lineTo(-0.3*r, 0.85*r); ctx.closePath();
+  ctx.moveTo(0.35*r, 0.35*r);  ctx.lineTo(0.85*r, 0.95*r);  ctx.lineTo(0.3*r, 0.85*r);  ctx.closePath();
+  ctx.fillStyle = '#b01a1a';
+  ctx.fill();
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = '#241A2E';
+  ctx.stroke();
+
+  // nose cone + tapered hull
+  ctx.beginPath();
+  ctx.moveTo(0, -1.3*r);
+  ctx.quadraticCurveTo(0.42*r, -0.6*r, 0.4*r, 0.1*r);
+  ctx.lineTo(0.35*r, 0.85*r);
+  ctx.quadraticCurveTo(0, 1.0*r, -0.35*r, 0.85*r);
+  ctx.lineTo(-0.4*r, 0.1*r);
+  ctx.quadraticCurveTo(-0.42*r, -0.6*r, 0, -1.3*r);
+  ctx.closePath();
+  ctx.fillStyle = '#e5ff00';
+  ctx.fill();
+  ctx.lineWidth = 2.5;
+  ctx.lineJoin = 'round';
+  ctx.stroke();
+
+  // porthole window
+  ctx.beginPath();
+  ctx.arc(0, -0.15*r, r*0.22, 0, Math.PI*2);
+  ctx.fillStyle = '#00ffe5';
+  ctx.fill();
+  ctx.lineWidth = 1.75;
+  ctx.strokeStyle = '#241A2E';
+  ctx.stroke();
+
+  ctx.restore();
+}
   function render(){
     ctx.clearRect(0,0,W,H);
     ctx.fillStyle = '#05060f';
     ctx.fillRect(0,0,W,H);
  
-    ctx.fillStyle = 'rgba(232,236,245,0.5)';
+    ctx.fillStyle = 'rgb(255, 213, 0)';
     for (const s of stars){
       ctx.globalAlpha = 0.5;
       ctx.beginPath();
@@ -302,8 +337,8 @@
       ctx.save();
       ctx.translate(a.x, a.y);
       ctx.rotate(a.rot);
-      ctx.fillStyle = '#3a1626';
-      ctx.strokeStyle = '#FF4D8D';
+      ctx.fillStyle = '#8e5027';
+      ctx.strokeStyle ='#543d25';
       ctx.lineWidth = 2;
       ctx.beginPath();
       const spikes = 7;
@@ -322,8 +357,8 @@
     for (const o of orbs){
       const pulseR = o.r + Math.sin(o.pulse)*2;
       ctx.save();
-      ctx.fillStyle = '#FFB84D';
-      ctx.shadowColor = '#FFB84D';
+      ctx.fillStyle = '#f6ff00';
+      ctx.shadowColor = '#d6ea1c';
       ctx.shadowBlur = 12;
       ctx.beginPath();
       ctx.arc(o.x, o.y, pulseR, 0, Math.PI*2);
